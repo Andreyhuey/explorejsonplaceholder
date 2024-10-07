@@ -1,81 +1,147 @@
-# Explorejsonplaceholder
+# Nx Monorepo with Angular and React Apps
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This monorepo is built using [Nx](https://nx.dev/), and includes both an **Angular** and a **React** app. The apps are deployed on **Vercel** for easy deployment and scalability.
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## Deployed Apps
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+[Angular App](https://explorejsonplaceholder-react-app.vercel.app/)
+[React App](https://explorejsonplaceholder-react-app.vercel.app/)
 
-## Finish your CI setup
+## Table of Contents
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/UYLQMW27Sr)
+- [Project Overview](#project-overview)
+- [Folder Structure](#folder-structure)
+- [Setup Instructions](#setup-instructions)
+- [Running the Apps](#running-the-apps)
+- [Building the Apps](#building-the-apps)
+- [Deployment](#deployment)
+- [Links to Deployed Apps](#links-to-deployed-apps)
 
-## Run tasks
+---
 
-To run the dev server for your app, use:
+## Project Overview
 
-```sh
-npx nx serve explorejsonplaceholder
+This monorepo is designed to handle multiple projects in one repository, with shared libraries and tools for development, testing, and deployment. It uses Nx to manage both an Angular and React app, providing a modern developer experience with fast builds and a flexible structure.
+
+### Technology Stack:
+
+- **Angular**: A front-end web framework for building single-page applications.
+- **React**: A JavaScript library for building user interfaces.
+- **Vercel**: A cloud platform for deploying and hosting web applications, especially front-end projects.
+
+---
+
+## Folder Structure
+
+- **`apps/explorejsonplaceholder/`**: Contains the Angular application's code.
+- **`apps/my-react-app/`**: Contains the React application's code.
+
+---
+
+## Setup Instructions
+
+### 1. Clone the Repository:
+
+```bash
+git clone <your-repository-url>
+cd <your-repository-folder>
+
 ```
 
-To create a production bundle:
-
-```sh
-npx nx build explorejsonplaceholder
+```
+npm install
+nx graph
 ```
 
-To see all available targets to run for a project, run:
+### 2. Install Dependencies:
 
-```sh
-npx nx show project explorejsonplaceholder
+After cloning the repository, install all required dependencies for both apps and the Nx workspace by running:
+
+```
+npm install
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+### 3. Nx Workspace Configuration:
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+Nx offers a lot of tools to manage multiple applications in one repository. You can visualize the dependency graph of your apps and libraries by running:
 
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-Use the plugin's generator to create new projects.
-
-To generate a new application, use:
-
-```sh
-npx nx g @nx/angular:app demo
+```
+nx graph
 ```
 
-To generate a new library, use:
+## Running the Apps
 
-```sh
-npx nx g @nx/angular:lib mylib
+Once the dependencies are installed, you can start running the applications.
+
+#### Angular App:
+
+To run the Angular app locally, use the following command:
+
+```
+nx serve explorejsonplaceholder
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+#### React App:
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+To run the React app locally, use the following command:
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```
+nx serve my-react-app
+```
 
-## Install Nx Console
+## Building the Apps
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+To create optimized production builds for the apps, you can use the Nx build commands.
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+#### Angular App:
 
-## Useful links
+To build the Angular app, use the following command:
 
-Learn more:
+```
+nx build angular-app
+```
 
-- [Learn more about this workspace setup](https://nx.dev/getting-started/tutorials/angular-monorepo-tutorial?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+The production build will be created in the dist/apps/explorejsonplaceholder/browser directory.
 
-And join the Nx community:
+#### React App:
 
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+To build the React app, use the following command:
+
+```
+nx build my-react-app
+```
+
+## Deployment
+
+Both apps are deployed on Vercel. To deploy your changes or redeploy the apps, follow the instructions below.
+
+#### 1. Vercel Account:
+
+Ensure that you have a Vercel account and that this repository is linked to Vercel.
+
+#### 2. Set Up Vercel for Angular and React Apps:
+
+For each app, configure separate Vercel projects and link them to the appropriate app directories in your Nx workspace:
+
+- Angular App: Link Vercel to apps/explorejsonplaceholder/, and ensure the build output uses the dist/apps/explorejsonplaceholder/browser directory.
+- React App: Link Vercel to apps/my-react-app/, and ensure the build output uses the dist/apps/react-app directory.
+
+#### 3. Deploying to Vercel:
+
+Once connected to Vercel, every push to the main branch (or the default branch) will trigger a new deployment. You can also deploy manually using the Vercel CLI or via the Vercel Dashboard.
+
+To trigger a manual deployment from the terminal, use:
+
+```bash
+
+vercel --prod
+```
+
+This command deploys the app in production mode.
+
+## Links to Deployed Apps
+
+Once the apps are deployed, you can access them via the following links:
+
+[Angular App](https://explorejsonplaceholder-react-app.vercel.app/)
+[React App](https://explorejsonplaceholder-react-app.vercel.app/)
