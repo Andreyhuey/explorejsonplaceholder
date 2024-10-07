@@ -428,7 +428,7 @@ export function NxWelcome({ title }: { title: string }) {
         }}
       />
       <div className="wrapper">
-        <div className="container">
+        <div className="px-2 flex items-center justify-between h-screen">
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
